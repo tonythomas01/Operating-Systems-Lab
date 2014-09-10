@@ -15,6 +15,11 @@ int main( int argc, char* argv[] ) {
 
 	pipe( fdone );
 
+	if( argc < 3 ) {
+	    printf( "Atleast need 2 params " );
+	    exit(1);
+	}
+
 	int fileOpen = open( argv[1], 0 );
 	int targetFile = open( argv[2], 0666 );
 	
