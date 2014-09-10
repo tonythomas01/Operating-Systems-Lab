@@ -10,8 +10,9 @@ case $operator in
 echo $(( x + y ))	;;
 -) echo "sub"
 echo $(( x - y )) 	;;
-*) echo "mult"
+\*) echo "mult"
 echo $(( x * y ))	;;
 /) echo "div"
 echo $(( x / y ))	;;
+*) echo "wrong input "	;;
 esac
