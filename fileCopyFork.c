@@ -37,7 +37,7 @@ int main( int argc, char* argv[] ) {
 	    printf( "The recived string is : %s", readBuff );
 
 	    //Writing to the target fileOpen
-	    write( targetFile, readBuff, sizeof( readBuff ) + 1 );
+	    write( targetFile, readBuff, strlen( readBuff ) + 1 );
 	} else {
 	    // inside the parent process
 	    close( fdone[0] );
