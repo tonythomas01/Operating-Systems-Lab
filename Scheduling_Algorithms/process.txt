@@ -1,2 +1,2 @@
-gedit 1 20 1
-kate 2 23 2
+gedit 2 20 1
+kate 1 23 2

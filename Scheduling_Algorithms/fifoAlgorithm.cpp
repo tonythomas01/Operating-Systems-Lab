@@ -40,23 +40,21 @@ int main() {
         }
         // Now sort the vector
         sort( arrivalTime.begin(), arrivalTime.end() );
-        int timer= 1;
-        for( int i = 0; i< NUMBEROFPROCESS; i++ ) {
-                newProcessArray[i].processExecStart = timer;
-                timer+=newProcessArray[i].processBurstTime;
-                newProcessArray[i].processExecEnd = timer;
-                newProcessArray[i].processWaitingTime = newProcessArray[i].processExecStart - newProcessArray[i].processArrivalTime;
-        }
-
         // Now print according to arrival Time vector
+        int timer= 1;
         for( int i = 0; i<NUMBEROFPROCESS; i++ ) {
                 int j = arrivalTime.front();
                 for( int k=0; k<NUMBEROFPROCESS; k++ ) {
                         if( j == newProcessArray[k].processArrivalTime ) {
+                                newProcessArray[k].processExecStart = timer;
+                                timer += newProcessArray[k].processBurstTime;
+                                newProcessArray[k].processExecEnd = timer;
+                                newProcessArray[k].processWaitingTime = newProcessArray[k].processExecStart - newProcessArray[k].processArrivalTime;
                                 cout<<" Process Name :"<<newProcessArray[k].processName<<"\n";
                                 cout<<" Arrival Time :"<<newProcessArray[k].processArrivalTime<<"\n";
                                 cout<<" Burst Time:"<<newProcessArray[k].processBurstTime<<"\n";
                                 cout<<" Exec start:"<<newProcessArray[k].processExecStart<<"\n";
+                                cout<<" Exec end:"<<newProcessArray[k].processExecEnd<<"\n";
                                 cout<<" Waiting Time:"<<newProcessArray[k].processWaitingTime<<"\n";
                         }
                 }
